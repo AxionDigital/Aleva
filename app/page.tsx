@@ -446,7 +446,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <a
-                    href="https://pizzaria-modelo.vercel.app/"
+                    href="https://modelo-pizzaria.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-background text-foreground px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform"
