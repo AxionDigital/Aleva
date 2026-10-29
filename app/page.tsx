@@ -5,7 +5,7 @@ import { useScrollReveal } from './hooks/useScrollReveal';
 import { ArrowRight, Code2, Palette, Zap, Users, Lightbulb, TrendingUp, CheckCircle, MessageSquare, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useLanguage } from './contexts/LanguageContext';
-import { FaInstagram, FaLinkedin, FaTiktok } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp } from 'react-icons/fa';
 import { MdOutlineEmail } from "react-icons/md";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
@@ -24,7 +24,7 @@ import {
   SiFigma,
   SiAngular,
 } from 'react-icons/si';
-
+import { useTheme } from 'next-themes';
 
 export default function Home() {
   const { t, tArray } = useLanguage();
@@ -39,7 +39,15 @@ export default function Home() {
   const faqSection = useScrollReveal({ threshold: 0.2 });
   const templatesSection = useScrollReveal({ threshold: 0.2 });
   const ctaSection = useScrollReveal({ threshold: 0.2 });
-  const contactSection = useScrollReveal({ threshold: 0.2 }); // ← ADICIONE ESTA LINHA
+  const contactSection = useScrollReveal({ threshold: 0.2 });
+
+  const [mounted, setMounted] = useState(false);
+  const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
 
   const carouselImages = [
     'https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=1600&q=80',
@@ -678,12 +686,22 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-12">
             <div className='relative mb-14'>
               <Image
-                src="/logo.png"
+                src={
+                  !mounted
+                    ? '/logo_fundo_branco.png'
+                    : theme === 'dark'
+                      ? '/logo_fundo_preto.png'
+                      : '/logo_fundo_branco.png'
+                }
                 alt="Stack3"
                 width={250}
                 height={250}
                 priority
-                className='absolute -left-11 -top-[60px] md:right-11  md:-bottom-10'
+                className={`absolute -left-11 -top-[60px] md:right-11  md:-bottom-10
+                ${theme === 'dark'
+                    ? 'w-[200px] h-auto'
+                    : 'w-[200px] h-auto'
+                  } `}
               />
               <p className="text-gray-600 text-sm absolute -left-15 top-14 md:left-1  md:-bottom-10">{t('footer.tagline')}</p>
             </div>
@@ -714,16 +732,19 @@ export default function Home() {
 
           <div className="pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-gray-600">
-              © 2026 Axion. {t('footer.rights')}
+              © 2026 Aleva. {t('footer.rights')}
             </p>
             <div className="flex gap-6 mt-4 md:mt-0">
-              <a href="#" className="text-foreground hover:text-purple-600 transition-colors">
-                <FaTiktok className="w-5 h-5" />
+
+              <a href={`https://wa.me/5517992472916?text=${encodeURIComponent(
+                t('cta.whatsapp')
+              )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-purple-600 transition-colors">
+                <FaWhatsapp className="w-5 h-5" />
               </a>
-              <a href="#" className="text-foreground hover:text-purple-600 transition-colors">
-                <FaLinkedin className="w-5 h-5" />
-              </a>
-              <a href="https://www.instagram.com/axiondigital01/" className="text-foreground hover:text-purple-600 transition-colors">
+              <a href="https://www.instagram.com/alevatecnologia" className="text-foreground hover:text-purple-600 transition-colors">
                 <FaInstagram className="w-5 h-5" />
               </a>
             </div>

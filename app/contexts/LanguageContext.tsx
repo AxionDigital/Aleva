@@ -64,7 +64,7 @@ const translations: Translations = {
       'Planejamento tecnológico para crescimento e performance do seu negócio.',
 
     /* WHY US */
-    'why.title': 'Por que escolher a Axion?',
+    'why.title': 'Por que escolher a Aleva?',
     'why.subtitle':
       'Somos mais que uma agência, somos seu parceiro estratégico',
 
@@ -201,7 +201,7 @@ const translations: Translations = {
     'services.strategy.desc':
       'Technology planning for sustainable growth.',
 
-    'why.title': 'Why choose Axion?',
+    'why.title': 'Why choose Aleva?',
     'why.subtitle': 'Your strategic digital partner',
 
     'why.growth.title': 'Sustainable Growth',
@@ -329,7 +329,7 @@ const translations: Translations = {
       'Planificación tecnológica para el crecimiento y el rendimiento.',
 
     /* WHY US */
-    'why.title': '¿Por qué elegir Axion?',
+    'why.title': '¿Por qué elegir Aleva?',
     'why.subtitle':
       'Más que una agencia, somos tu socio estratégico',
 

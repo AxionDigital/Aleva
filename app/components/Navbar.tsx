@@ -44,16 +44,26 @@ export default function Navbar() {
           {/* Logo */}
           <div className="relative right-7 md:right-4 group cursor-pointer">
             <Image
-              src="/logo.png"
+              src={
+                !mounted
+                  ? '/logo_fundo_branco.png'
+                  : theme === 'dark'
+                    ? '/logo_fundo_preto.png'
+                    : '/logo_fundo_branco.png'
+              }
               alt="Stack3"
-              width={150}
-              height={150}
-              className="
+              width={170}
+              height={170}
+              className={`
                 transition-all duration-300
                 group-hover:-translate-y-0.5
                 group-hover:scale-[1.03]
-                group-hover:drop-shadow-[0_8px_20px_rgba(124,58,237,0.35)]
-              "
+                group-hover:drop-shadow-[0_8px_20px_rgba(124,58,237,0.35)] 
+    ${theme === 'dark'
+                  ? 'w-[140px] h-auto'
+                  : 'w-[140px] h-auto'
+                } 
+              `}
             />
           </div>
 
