@@ -5,7 +5,7 @@ import { useScrollReveal } from './hooks/useScrollReveal';
 import { ArrowRight, Code2, Palette, Zap, Users, Lightbulb, TrendingUp, CheckCircle, MessageSquare, ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { useLanguage } from './contexts/LanguageContext';
-import { FaInstagram, FaLinkedin, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { MdOutlineEmail } from "react-icons/md";
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
