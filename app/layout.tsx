@@ -6,7 +6,7 @@ import { Toaster } from 'react-hot-toast';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Axion - Desing que atrai. Código que sustenta.',
+  title: 'Aleva - Desing que atrai. Código que sustenta.',
   description: 'Agência de programação e design especializada em soluções digitais inovadoras',
 };
 
